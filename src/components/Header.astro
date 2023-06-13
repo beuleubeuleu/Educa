@@ -1,0 +1,48 @@
+---
+import CSS               from "../styles/Header.module.scss";
+
+const menuItems: {
+  title: string;
+  path: string;
+  children?: { title: string; path: string }[];
+}[] = [
+  {
+    title: "Accueil",
+    path: "/"
+  },
+  {
+    title: "À propos",
+    path: "/a-propos"
+  }
+];
+---
+
+<header class={ CSS.header }>
+    <input aria-label="Mobile Menu" type="checkbox" class={ CSS.header__burger }/>
+
+    <a href="/" class={ CSS.header__logo }>
+        Educa
+    </a>
+
+    <div class={ CSS.header__links }>
+      {
+        menuItems.map((item) => (
+                <>
+                  { item.children && (
+                          <a class={ CSS.header__link } href={ item.path }>{ item.title }</a>
+                          <div class={ CSS.header__sublinks }>
+                            { item.children.map((children) => (
+                                    <a href={ children.path }>{ children.title }</a>
+                            )) }
+                          </div>
+                  ) }
+
+                  { !item.children && (
+                          <a class={ CSS.header__link } href={ item.path }>{ item.title }</a>
+                  ) }
+                </>
+        ))
+      }
+
+    </div>
+</header>

@@ -1,0 +1,98 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
+import { formatDate, slugify } from "../ts/utils";
+import Footer from "../components/Footer.astro";
+const { frontmatter } = Astro.props;
+const { title, description, date, category, author, src, alt } = frontmatter;
+console.log(frontmatter);
+---
+
+<Layout title={title} description={description}>
+  <main>
+    <section class="hero">
+      <a class="tag" href={`/categorie/${slugify(category)}`}>{category}</a>
+      <h2>{title}</h2>
+      <p>
+        écrit par
+        <a href={`/author/${slugify(author)}`}>{author}</a>
+        | {formatDate(date)}
+      </p>
+      <div class="hero-image">
+        <Image
+          src={src}
+          alt={alt}
+          width="1200"
+          height="600"
+          format="webp"
+          loading="eager"
+        />
+      </div>
+    </section>
+    <div class="content">
+      <slot />
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    text-align: center;
+  }
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .tag {
+    background: #5d9892;
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 0.1em 0.4em;
+    font-size: 1rem;
+    border-radius: 3px 3px 0 0;
+  }
+
+  img {
+    width: 400px;
+    height: 250px;
+    margin: auto;
+  }
+
+  .hero-image {
+    width: 100%;
+    background: #fff;
+  }
+
+  .text {
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .content {
+    max-width: 136ch;
+    margin: auto;
+    text-align: center;
+    margin-block: 2em;
+    padding: 0.5em;
+  }
+
+  @media only screen and (min-width: 900px) {
+    img {
+      width: 900px;
+      height: 400px;
+      margin: auto;
+    }
+  }
+</style>
