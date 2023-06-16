@@ -2,27 +2,27 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "@astrojs/image/components";
 import { formatDate, slugify } from "../ts/utils";
-const { title, description, date, category, author, src, alt } = Astro.props;
+const { post, url } = Astro.props;
+const { title, description, date, category, author, src, alt } =
+  post.frontmatter;
 ---
 
-<Layout title={title} description={description}>
-  <div class="container">
-    <a href="">
-      <Image src={src} alt={alt} width="600" height="400" />
-    </a>
-    <a class="tag" href={`/categorie/${slugify(category)}`}>{category}</a>
-    <div class="text">
-      <h2>{title}</h2>
+<div class="container">
+  <a href={url}>
+    <Image src={src} alt={alt} width="600" height="400" format="webp" />
+  </a>
+  <a class="tag" href={`/categorie/${slugify(category)}`}>{category}</a>
+  <div class="text">
+    <h2>{title}</h2>
 
-      <p>
-        écrit par
-        <a href={`/author/${slugify(author)}`}>{author}</a>
-        | {formatDate(date)}
-      </p>
-    </div>
-    <a href="" target="_" class="button"> Lire l'article</a>
+    <p>
+      écrit par
+      <a href={`/author/${slugify(author)}`}>{author}</a>
+      | {formatDate(date)}
+    </p>
   </div>
-</Layout>
+  <a href={url} class="button"> Lire l'article</a>
+</div>
 
 <style>
   .container:hover {

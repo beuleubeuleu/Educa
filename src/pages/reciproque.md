@@ -1,9 +1,9 @@
 ---
-layout: "../../layouts/BlogPostLayout.astro"
+layout: "../layouts/BlogPostLayout.astro"
 title: Comprendre la réciproque et la contraposée - De puissantes techniques de raisonnement mathématique
 date: 2022-11-20
 author: John Charles Fields
-src: /images/reciproque-hero.png
+src: /images/math-generale.png
 alt: image d'un tableau noir rempli de formule de mathématiques.
 description: Du mal avec la reciproque et la contraposée? ne vous faites plus de soucis
 draft: false
