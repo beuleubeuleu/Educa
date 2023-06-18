@@ -6,7 +6,7 @@ author: John Charles Fields
 src: /images/equation-hero.png
 alt: image d'une équations linéaire.
 description: Découvrir les équations simples
-draft: false,
+draft: false
 category: Mathématiques
 ---
 Les équations sont des expressions mathématiques puissantes qui nous aident à résoudre des problèmes et à comprendre les

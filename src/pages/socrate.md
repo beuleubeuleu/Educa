@@ -6,7 +6,7 @@ author: John Charles Fields
 src: /images/socrate.png
 alt: image d'une sculpture de Socrate.
 description: La recherche de la vérité
-draft: false,
+draft: false
 category: Philosophie
 ---
 

@@ -1,23 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import BlogCard from "../components/BlogCard.astro";
+import { formatBlogPosts } from "../ts/utils";
 const allPosts = await Astro.glob("./*.md");
+const formattedPosts = formatBlogPosts(allPosts, {
+  filterOutFuturePosts: false,
+  filterOutDrafts: true,
+});
 ---
 
 <Layout
   title="Blog"
   description="Voici la page on sont repertiorié tous les articles du site"
 >
-  <main>
-    <ul>
-      {allPosts.map((post) => <BlogCard post={post} url={post.url} />)}
-    </ul>
-  </main>
+  <ul>
+    {formattedPosts.map((post) => <BlogCard post={post} url={post.url} />)}
+  </ul>
 </Layout>
 
 <style>
   ul {
     margin-block: 2em;
+    width: min(1196px, 100%);
+    margin: auto;
   }
 
   @media only screen and (min-width: 800px) {
