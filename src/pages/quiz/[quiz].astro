@@ -1,0 +1,100 @@
+---
+import quiz from "../../data/quiz.json";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const allQuiz = quiz.quiz;
+  console.log(allQuiz);
+  return allQuiz.map((quiz) => {
+    return {
+      params: { quiz: quiz.url },
+      props: { title: quiz.title, questions: quiz.questions },
+    };
+  });
+}
+
+const { quiz } = Astro.params;
+const { title, questions } = Astro.props;
+---
+
+<Layout title="quiz" description={title}>
+  <main>
+    <h2>{title}</h2>
+    <section>
+      {
+        questions.map((question) => (
+          <div>
+            {question.question.length > 72 ? (
+              <p class="question">{question.question}</p>
+            ) : (
+              <pre class="question">{question.question}</pre>
+            )}
+            <ul>
+              {question.choices.map((choice) => (
+                <li>
+                  <button class="choice">
+                    {question.choices.indexOf(choice) + 1}){choice}
+                  </button>
+                </li>
+              ))}
+            </ul>
+            <p class="reponse">réponse: {question.choices[question.answer]}</p>
+          </div>
+        ))
+      }
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    padding: 1em;
+  }
+
+  div {
+    width: 280px;
+    margin: 3em auto auto;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 0px 20px 50px #d9dbdf;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+  }
+
+  .question {
+    max-width: 280px;
+    background-color: #5d9892;
+    color: white;
+    padding: 0.6em 0.2em;
+    border-radius: 3px 3px 0 0;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  li {
+    padding: 1em;
+  }
+
+  .reponse {
+    display: none;
+  }
+
+  @media only screen and (min-width: 800px) {
+    section {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 350px);
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+</style>
