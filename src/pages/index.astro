@@ -11,7 +11,7 @@ const formattedPosts = formatBlogPosts(allPosts, {
 
 <Layout
   title="Blog"
-  description="Voici la page on sont repertiorié tous les articles du site"
+  description="Voici la page on sont répertoriés tous les articles du site"
 >
   <ul>
     {formattedPosts.map((post) => <BlogCard post={post} url={post.url} />)}
@@ -23,6 +23,7 @@ const formattedPosts = formatBlogPosts(allPosts, {
     margin-block: 2em;
     width: min(1196px, 100%);
     margin: auto;
+    list-style-type: none;
   }
 
   @media only screen and (min-width: 800px) {

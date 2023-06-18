@@ -1,5 +1,4 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import { Image } from "@astrojs/image/components";
 import { formatDate, slugify } from "../ts/utils";
 const { post, url } = Astro.props;
@@ -7,7 +6,7 @@ const { title, description, date, category, author, src, alt } =
   post.frontmatter;
 ---
 
-<div class="container">
+<li class="container">
   <a href={url}>
     <Image src={src} alt={alt} width="600" height="400" format="webp" />
   </a>
@@ -17,12 +16,12 @@ const { title, description, date, category, author, src, alt } =
 
     <p>
       écrit par
-      <a href={`/author/${slugify(author)}`}>{author}</a>
+      <a href={`/auteur/${slugify(author)}`}>{author}</a>
       | {formatDate(date)}
     </p>
   </div>
   <a href={url} class="button"> Lire l'article</a>
-</div>
+</li>
 
 <style>
   .container:hover {
@@ -59,8 +58,8 @@ const { title, description, date, category, author, src, alt } =
   }
 
   .tag {
-    background: #5d9892;
-    color: whitesmoke;
+    background: rgb(76, 128, 122);
+    color: white;
     text-decoration: none;
     padding: 0.1em 0.4em;
     font-size: 1rem;
