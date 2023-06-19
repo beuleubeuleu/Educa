@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/BlogPostLayout.astro"
+layout: "../../layouts/BlogPostLayout.astro"
 title: Comprendre la réciproque et la contraposée - De puissantes techniques de raisonnement mathématique
 date: 2022-11-20
 author: John Charles Fields

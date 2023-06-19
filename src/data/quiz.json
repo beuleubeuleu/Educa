@@ -1,0 +1,108 @@
+{
+  "quiz": [
+    {
+      "title": "Quiz sur le théorème de Pythagore",
+      "url": "pythagore",
+      "isFeatured": false,
+      "questions": [
+        {
+          "question": "Quel est le théorème de Pythagore ?",
+          "choices": [
+            "a² + b² = c²",
+            "a² = b² + c²",
+            "a + b = c",
+            "a = b + c²"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Quelle est l'équation du théorème de Pythagore pour trouver l'hypoténuse ?",
+          "choices": [
+            "a = √(b² + c²)",
+            "c = √(a² + b²)",
+            "b = √(a² + c²)",
+            "c = √(a + b)"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Si les longueurs des côtés d'un triangle sont 3 cm, 4 cm et 5 cm, alors le triangle est :",
+          "choices": [
+            "Équilatéral",
+            "Isocèle",
+            "Rectangle",
+            "Obtusangle"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Quelle est la relation entre les côtés d'un triangle rectangle selon le théorème de Pythagore ?",
+          "choices": [
+            "Le carré de l'hypoténuse est égal à la somme des carrés des deux autres côtés",
+            "La somme des côtés adjacents est égale à l'hypoténuse",
+            "Le carré de l'un des côtés est égal à la somme des carrés des deux autres côtés",
+            "La somme des côtés opposés est égale à l'hypoténuse"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "title": "Quiz de résolution d'équations",
+      "url": "equations",
+      "isFeatured": true,
+      "questions": [
+        {
+          "question": "Résolvez l'équation suivante:\n 2x + 5 = 13",
+          "choices": [
+            "x = 3",
+            "x = 4",
+            "x = 5",
+            "x = 6"
+          ],
+          "answer": 1
+        },
+        {
+          "question": "Résolvez l'équation suivante:\n 3(x - 4) = 15",
+          "choices": [
+            "x = 6",
+            "x = 7",
+            "x = 8",
+            "x = 9"
+          ],
+          "answer": 3
+        },
+        {
+          "question": "Résolvez l'équation suivante:\n 7 - 2x = 5",
+          "choices": [
+            "x = 1",
+            "x = 2",
+            "x = 3",
+            "x = 4"
+          ],
+          "answer": 0
+        },
+        {
+          "question": "Résolvez l'équation suivante:\n 4x + 9 = 3x + 15",
+          "choices": [
+            "x = 4",
+            "x = 5",
+            "x = 6",
+            "x = 7"
+          ],
+          "answer": 2
+        },
+        {
+          "question": "Résolvez l'équation suivante:\n 2(x + 3) - 4 = 10",
+          "choices": [
+            "x = 2",
+            "x = 3",
+            "x = 4",
+            "x = 5"
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ]
+}

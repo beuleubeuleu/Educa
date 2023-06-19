@@ -20,14 +20,18 @@
 
   .header__logo {
     transition: background-color 0.3s ease-in-out;
-    font-size: 1.2rem;
-    font-family: "andale mono", sans-serif;
-    padding: .5em ;
-    font-weight: 600;
+
+    h1{
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: .5em ;
+      font-family: "andale mono", sans-serif;
+    }
     img{
       max-width: 66px;
       max-height: 42px;
     }
+
 
 
     &:hover,

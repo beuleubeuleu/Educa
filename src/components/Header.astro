@@ -1,19 +1,24 @@
 ---
-import CSS               from "../styles/Header.module.scss";
+import CSS from "../styles/Header.module.scss";
 
 const menuItems: {
   title: string;
   path: string;
   children?: { title: string; path: string }[];
 }[] = [
+
   {
     title: "Blog",
     path: "/blog"
   },
   {
+    title: "Quiz",
+    path: "/quiz"
+  },
+  {
     title: "À propos",
     path: "/a-propos"
-  }
+  },
 ];
 ---
 
@@ -21,7 +26,7 @@ const menuItems: {
     <input aria-label="Mobile Menu" type="checkbox" class={ CSS.header__burger }/>
 
     <a href="/" class={ CSS.header__logo }>
-        Educa
+        <h1>Educa</h1>
     </a>
 
     <div class={ CSS.header__links }>

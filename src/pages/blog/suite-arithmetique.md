@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/BlogPostLayout.astro"
+layout: "../../layouts/BlogPostLayout.astro"
 title: Les Suites Arithmétiques, Une Introduction Simple
 date: 2023-01-05
 author: John Charles Fields

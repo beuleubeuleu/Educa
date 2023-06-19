@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import BlogCard from "../../components/BlogCard.astro";
+import { formatBlogPosts } from "../../ts/utils";
+const allPosts = await Astro.glob("./*.md");
+const formattedPosts = formatBlogPosts(allPosts, {
+  filterOutFuturePosts: false,
+  filterOutDrafts: true,
+});
+---
+
+<Layout
+  title="Blog"
+  description="Voici la page on sont répertoriés tous les articles du site"
+>
+  <h2>Tous les articles:</h2>
+  <ul>
+    {formattedPosts.map((post) => <BlogCard post={post} url={post.url} />)}
+  </ul>
+</Layout>
+
+<style>
+  h2 {
+    padding: 0.5em;
+  }
+  ul {
+    margin-block: 2em;
+    width: min(1196px, 100%);
+    margin: auto;
+    list-style-type: none;
+  }
+
+  @media only screen and (min-width: 800px) {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 350px);
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+</style>

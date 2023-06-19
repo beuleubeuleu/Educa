@@ -1,12 +1,12 @@
 ---
-layout: "../layouts/BlogPostLayout.astro"
+layout: "../../layouts/BlogPostLayout.astro"
 title: Comprendre les équations, Un guide accessible pour tous
 date: 2022-12-02
 author: John Charles Fields
 src: /images/equation-hero.png
 alt: image d'une équations linéaire.
 description: Découvrir les équations simples
-draft: false,
+draft: false
 category: Mathématiques
 ---
 Les équations sont des expressions mathématiques puissantes qui nous aident à résoudre des problèmes et à comprendre les

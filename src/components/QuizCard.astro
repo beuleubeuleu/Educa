@@ -1,26 +1,13 @@
 ---
-import { Image } from "@astrojs/image/components";
-import { formatDate, slugify } from "../ts/utils";
-const { post, url } = Astro.props;
-const { title, description, date, category, author, src, alt } =
-  post.frontmatter;
+const { quiz } = Astro.props;
 ---
 
 <li class="container">
-  <a href={url}>
-    <Image src={src} alt={alt} width="600" height="400" format="webp" />
-  </a>
-  <a class="tag" href={`/categorie/${slugify(category)}`}>{category}</a>
   <div class="text">
-    <h2>{title}</h2>
-
-    <p>
-      écrit par
-      <a href={`/auteur/${slugify(author)}`}>{author}</a>
-      | {formatDate(date)}
-    </p>
+    <h2>{quiz.title}</h2>
   </div>
-  <a href={url} class="button"> Lire l'article</a>
+  <div class="text"><p>Exemple: <br />{quiz.questions[0].question}</p></div>
+  <a href={`/quiz/${quiz.url}`} class="button"> Tentez le quiz</a>
 </li>
 
 <style>
@@ -80,10 +67,6 @@ const { title, description, date, category, author, src, alt } =
     justify-content: center;
     align-items: center;
     gap: 1em;
-  }
-
-  .text p {
-    font-size: 0.7rem;
   }
 
   h2 {

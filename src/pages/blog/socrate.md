@@ -1,12 +1,12 @@
 ---
-layout: "../layouts/BlogPostLayout.astro"
+layout: "../../layouts/BlogPostLayout.astro"
 title: Socrate, Le Penseur qui Questionne les Fondements de la Connaissance
 date: 2023-01-22
 author: John Charles Fields
 src: /images/socrate.png
 alt: image d'une sculpture de Socrate.
 description: La recherche de la vérité
-draft: false,
+draft: false
 category: Philosophie
 ---
 

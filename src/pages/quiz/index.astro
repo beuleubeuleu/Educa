@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import quiz from "../../data/quiz.json";
+import QuizCard from "../../components/QuizCard.astro";
+const allQuiz = quiz.quiz;
+---
+
+<Layout
+  title="Quiz"
+  description="Voici la page on sont répertoriés tous les quiz du site"
+>
+  <h2>Tous les quiz:</h2>
+  <ul>
+    {allQuiz.map((quiz) => <QuizCard quiz={quiz} />)}
+  </ul>
+</Layout>
+
+<style>
+  h2 {
+    padding: 0.5em;
+  }
+  ul {
+    margin-block: 2em;
+    width: min(1196px, 100%);
+    margin: auto;
+    list-style-type: none;
+  }
+
+  @media only screen and (min-width: 800px) {
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 350px);
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+</style>
