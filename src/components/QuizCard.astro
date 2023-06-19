@@ -6,7 +6,7 @@ const { quiz } = Astro.props;
   <div class="text">
     <h2>{quiz.title}</h2>
   </div>
-  <div class="text"><p>{quiz.questions[0].question}</p></div>
+  <div class="text"><p>Exemple: <br />{quiz.questions[0].question}</p></div>
   <a href={`/quiz/${quiz.url}`} class="button"> Tentez le quiz</a>
 </li>
 

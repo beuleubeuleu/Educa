@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/BlogPostLayout.astro"
+layout: "../../layouts/BlogPostLayout.astro"
 title: Socrate, Le Penseur qui Questionne les Fondements de la Connaissance
 date: 2023-01-22
 author: John Charles Fields

@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/BlogPostLayout.astro"
+layout: "../../layouts/BlogPostLayout.astro"
 title: Découvrons le théorème de Pythagore avec des astuces !
 date: 2022-12-02
 author: John Charles Fields

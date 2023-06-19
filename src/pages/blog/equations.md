@@ -1,5 +1,5 @@
 ---
-layout: "../layouts/BlogPostLayout.astro"
+layout: "../../layouts/BlogPostLayout.astro"
 title: Comprendre les équations, Un guide accessible pour tous
 date: 2022-12-02
 author: John Charles Fields

@@ -3,6 +3,7 @@
     {
       "title": "Quiz sur le théorème de Pythagore",
       "url": "pythagore",
+      "isFeatured": false,
       "questions": [
         {
           "question": "Quel est le théorème de Pythagore ?",
@@ -49,6 +50,7 @@
     {
       "title": "Quiz de résolution d'équations",
       "url": "equations",
+      "isFeatured": true,
       "questions": [
         {
           "question": "Résolvez l'équation suivante:\n 2x + 5 = 13",
