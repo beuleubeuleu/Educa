@@ -1,11 +1,16 @@
 ---
-import CSS               from "../styles/Header.module.scss";
+import CSS from "../styles/Header.module.scss";
 
 const menuItems: {
   title: string;
   path: string;
   children?: { title: string; path: string }[];
 }[] = [
+
+  {
+    title: "Quiz",
+    path: "/quiz"
+  },
   {
     title: "À propos",
     path: "/a-propos"
