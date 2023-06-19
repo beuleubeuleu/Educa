@@ -1,26 +1,56 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import BlogCard from "../components/BlogCard.astro";
+
 import { formatBlogPosts } from "../ts/utils";
-const allPosts = await Astro.glob("./*.md");
+
+import quiz from "../data/quiz.json";
+import BlogCard from "../components/BlogCard.astro";
+import QuizCard from "../components/QuizCard.astro";
+
+const allPosts = await Astro.glob("./blog/*.md");
 const formattedPosts = formatBlogPosts(allPosts, {
   filterOutFuturePosts: false,
   filterOutDrafts: true,
+  limit: 2,
 });
+const featuredQuiz = quiz.quiz.filter((quiz) => quiz.isFeatured);
 ---
 
 <Layout
   title="Blog"
   description="Voici la page on sont répertoriés tous les articles du site"
 >
-  <ul>
-    {formattedPosts.map((post) => <BlogCard post={post} url={post.url} />)}
-  </ul>
+  <main>
+    <section>
+      <h2>Voir nos derniers articles</h2>
+      <a class="seeAll" href="/blog">Voir tous nos articles</a>
+      <ul>
+        {formattedPosts.map((post) => <BlogCard post={post} url={post.url} />)}
+      </ul>
+    </section>
+    <section>
+      <h2>Voir nos quiz à la une!</h2>
+      <a class="seeAll" href="/quiz">Voir tous nos quiz</a>
+      <ul>
+        {featuredQuiz.map((quiz) => <QuizCard quiz={quiz} />)}
+      </ul>
+    </section>
+  </main>
 </Layout>
 
 <style>
+  main {
+    margin: auto;
+    padding: 1.5rem;
+  }
+
+  section {
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+  }
+
   ul {
-    margin-block: 2em;
     width: min(1196px, 100%);
     margin: auto;
     list-style-type: none;
